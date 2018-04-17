@@ -1,0 +1,332 @@
+/*Paramêtre de la Page*/
+
+html, body {
+	font-size: 10px;
+	background-color: #3a302e;
+}
+*{
+   margin: 0;
+   padding: 0;
+   border: 0;
+   box-sizing:border-box;
+}
+.clearfix {
+    clear: both;
+}
+
+
+
+
+
+
+
+
+
+li{
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+}
+.background_image {
+	background: #3a302e;
+	background-size: 100%;
+	width: 100%;
+	background-attachment: fixed;
+}
+h2 {
+	text-align: left;
+	font-size: 1.5em;
+	color: gold;
+	padding: 50px 120px;
+	margin: 0 0 30px 0;
+}
+.header {
+	width: 100%;
+	text-align: center;
+	font-size: 5em;
+	display: flex;
+}
+.picture {
+	height: 100px;
+	width: 100px;
+	margin: 30px 250px 20px 80px;
+}
+.pict {
+	height: 100px;
+	width: 100px;
+	margin: 30px 0 0 300px;
+}
+nav{
+	background: #3a302e;
+	padding: 2.38em;
+	width: 100%;
+	position: relative;
+}
+nav a {
+	color: white;
+	font-size: 20px;
+	padding: 1.15em;
+	text-decoration: none;
+
+}
+nav div a:nth-child(3) {
+	text-align: right;
+}
+.head a:hover {
+	color: black;
+	background-color: white;
+}
+.header div+div {
+	display: flex;
+}
+.header div+div h1:nth-child(1){
+	color: red;
+	text-shadow: black 1px 1px, black -1px 1px, black -1px -1px, black 1px -1px;
+}
+.header div+div h1:nth-child(2){
+	color: white;
+	text-shadow: black 1px 1px, black -1px 1px, black -1px -1px, black 1px -1px;
+}
+.header div+div h1:nth-child(3){
+	color: red;
+	text-shadow: black 1px 1px, black -1px 1px, black -1px -1px, black 1px -1px;
+}
+.buy {
+	border-radius: 25px;
+	background-color: beige;
+	padding: 2% 1%;
+	font-size: 40px;
+	margin: 20px;
+}
+.welcome {
+	margin-left: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+/*Carrousel*/
+
+.carousel {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin: 26px 0;
+
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+	width: 950px;
+	margin-left: 275px;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 2%;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #428bca;
+}
+
+#title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+
+
+
+
+
+
+
+
+ /*Styles des boutons*/
+
+.button
+{
+    /* structure */
+    display: inline-block;
+    padding: 0.375em 1.25em;
+
+    /* presentation */
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    line-height: 1.5em;
+    text-decoration: none;
+    transition: background-color 0.25s, box-shadow 0.25s;
+}
+.button[disabled],
+.button[disabled]:hover
+{
+    background-color: silver;
+    box-shadow: none;
+    color: grey;
+}
+.button + .button
+{
+    margin-left: 1em;
+}
+
+.button-cancel
+{
+    background-color: #FF3300;
+    color: white;
+}
+.button-cancel:hover
+{
+    background-color: #FF6633;
+    box-shadow: 0 0 4px 2px rgba(255, 102, 51, 0.5);
+    color: white;
+}
+
+.button-primary
+{
+    background-color: #339966;
+    color: white;
+}
+.button-primary:hover
+{
+    background-color: #66CC99;
+    box-shadow: 0 0 4px 2px rgba(102, 204, 153, 0.5);
+    color: white;
+}
+
+.button:active
+{
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+/*bas*/
+#info{
+    padding-left: 10%;
+    padding-right: 5%;
+    display: flex;
+    background-color: #353535
+}
+.about{
+    width: 30%;
+    color: white;
+    font-family: Rozha One;
+    text-align: justify;
+    margin-right: 2em;
+}
+.menu{
+    width: 30%;
+    color: white;
+    font-family: Rozha One;
+}
+.title{
+    font-size: 350%;
+}
+.squad {
+	color: orange;
+	text-decoration: none;
+}

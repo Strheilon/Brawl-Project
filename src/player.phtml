@@ -1,0 +1,18 @@
+<main>
+    <?php require 'src/nav.phtml'; ?>
+    <div class="buy">
+        <h2>Ajouter un Joueur</h2>
+
+        <form class="form" action="player.php" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="pseudo">Pseudo</label>
+                <input name="pseudo" type="pseudo" class="form-control" id="pseudo" placeholder="Pseudo">
+            </div>
+            <ul>
+                <li>
+                    <button class="button" type="submit">Ajouter</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</main>

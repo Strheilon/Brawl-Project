@@ -1,0 +1,22 @@
+<main>
+    <?php require 'src/nav.phtml'; ?>
+    <div class="buy">
+        <h2>Classement</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Brawlhalla</th>
+                    <th>
+                        Victoire
+                        <a href="classement.php?type=victory&id=<?= $_GET['id'] ?>" ><i class="fa fa-sort-down"></i></a>
+                    </th>
+                    <th>
+                        Defaite
+                        <a href="classement.php?type=defeat&id=<?= $_GET['id'] ?>" ><i class="fa fa-sort-down"></i></a>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</main>

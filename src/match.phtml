@@ -1,0 +1,25 @@
+<main>
+    <?php require 'src/nav.phtml'; ?>
+    <div class="buy">
+        <h2>Ajouter un Match</h2>
+        <form class="form" action="match.php" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="product">Nom du Match</label>
+                <input name="match" type="product" class="form-control" id="product" placeholder="Nom du Match">
+            </div>
+            <div>
+                <label for="product">Liste des Participants :</label>
+                <input name="player" type="product" class="form-control" id="product" placeholder="Ex : Pseudo,Pseudo,Pseudo,Pseudo">
+            </div>
+            <div>
+                <label for="product">Victoire du Joueur : </label>
+                <input name="player_win" type="product" class="form-control" id="product" placeholder="Nom du Vainqueur">
+            </div>
+            <ul>
+                <li>
+                    <button class="button" type="submit">Ajouter</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+</main>
