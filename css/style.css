@@ -101,8 +101,74 @@ nav div a:nth-child(3) {
 .welcome {
 	margin-left: 1.5em;
 }
+.pseudo {
+	text-align: center;
+    display: flex;
+    flex-direction: column;
+	width: 10%;
+    margin: 0 auto;
+	border-radius: 25px;
+	background-color: white;
+	padding: 2% 1%;
+	font-size: 40px;
+}
+.writen {
+	background-color: darkgrey;
+	border-radius: 25px;
+	text-align: center;
+}
+.form {
+	display: flex;
+}
+.match {
+	text-align: center;
+    display: flex;
+    flex-direction: column;
+	width: 20%;
+    margin: 0 auto;
+	border-radius: 25px;
+	background-color: white;
+	padding: 2% 1%;
+	font-size: 40px;
+}
 
 
+
+
+
+
+
+
+
+/*classement*/
+.paging {
+	display: flex;
+	margin-top: 2rem;
+	margin-left: 3rem;
+}
+.paging a {
+	margin-left: 1rem;
+	text-decoration: none;
+	color: black;
+}
+table {
+	text-align: center;
+	width: 100%;
+	font-size: 2.5rem;
+	border-collapse: collapse;
+}
+tbody tr:nth-child(odd) {
+  	background-color: #DDD;
+}
+tbody tr:nth-child(even) {
+  	background-color: white;
+}
+thead tr {
+	background-color: white;
+}
+th, td {
+	padding: 0.5rem;
+}
 
 
 
@@ -254,6 +320,8 @@ nav div a:nth-child(3) {
     line-height: 1.5em;
     text-decoration: none;
     transition: background-color 0.25s, box-shadow 0.25s;
+	margin-left: 688px;
+	margin-top: 20px;
 }
 .button[disabled],
 .button[disabled]:hover
@@ -325,8 +393,5 @@ nav div a:nth-child(3) {
 }
 .title{
     font-size: 350%;
-}
-.squad {
-	color: orange;
-	text-decoration: none;
+	margin: 2rem 0;
 }

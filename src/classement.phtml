@@ -6,17 +6,133 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Brawlhalla</th>
+                    <th>Pseudo</th>
                     <th>
-                        Victoire
+                        <span>Nombre de Match</span>
+                        <a href="classement.php?type=match&id=<?= $_GET['id'] ?>" ><i class="fa fa-sort-down"></i></a>
+                    </th>
+                    <th>
+                        <span>Victoire</span>
                         <a href="classement.php?type=victory&id=<?= $_GET['id'] ?>" ><i class="fa fa-sort-down"></i></a>
                     </th>
                     <th>
-                        Defaite
+                        <span>Defaite</span>
                         <a href="classement.php?type=defeat&id=<?= $_GET['id'] ?>" ><i class="fa fa-sort-down"></i></a>
                     </th>
                 </tr>
             </thead>
+            <tbody>
+                <?php if ($_GET['type'] == 'victory'): ?>
+                    <?php foreach($class as $key => $classe) : ?>
+                        <tr>
+                            <?php if ($_GET['id'] == 1 && $key < 10): ?>
+                                <td><?= $key+1 ?></td>
+                                <td><?= htmlspecialchars($classe['Pseudo'])?></td>
+                                <td><?= htmlspecialchars($classe['NbMatch'])?></td>
+                                <td><?= htmlspecialchars($classe['NbVictory'])?></td>
+                                <td><?= htmlspecialchars($classe['NbDefeat'])?></td>
+                            <?php endif; ?>
+                            <?php $value+10; ?>
+                            <?php if ($_GET['id'] >= 2 && $key >= $value && $key < $value+10): ?>
+                                <td><?=($key+1)+10*($_GET['id']-1)-10;?></td>
+                                <td><?= htmlspecialchars($classe['Pseudo'])?></td>
+                                <td><?= htmlspecialchars($classe['NbMatch'])?></td>
+                                <td><?= htmlspecialchars($classe['NbVictory'])?></td>
+                                <td><?= htmlspecialchars($classe['NbDefeat'])?></td>
+                            <?php endif; ?>
+                        </tr>
+                    <?php endforeach ?>
+                <?php endif; ?>
+                <?php if ($_GET['type'] == 'defeat'): ?>
+                    <?php foreach($defeat as $key => $classe) : ?>
+                        <tr>
+                            <?php if ($_GET['id'] == 1 && $key < 10): ?>
+                                <td><?= $key+1 ?></td>
+                                <td><?= htmlspecialchars($classe['Pseudo'])?></td>
+                                <td><?= htmlspecialchars($classe['NbMatch'])?></td>
+                                <td><?= htmlspecialchars($classe['NbVictory'])?></td>
+                                <td><?= htmlspecialchars($classe['NbDefeat'])?></td>
+                            <?php endif; ?>
+                            <?php $value+10; ?>
+                            <?php if ($_GET['id'] >= 2 && $key >= $value && $key < $value+10): ?>
+                                <td><?=($key+1)+10*($_GET['id']-1)-10;?></td>
+                                <td><?= htmlspecialchars($classe['Pseudo'])?></td>
+                                <td><?= htmlspecialchars($classe['NbMatch'])?></td>
+                                <td><?= htmlspecialchars($classe['NbVictory'])?></td>
+                                <td><?= htmlspecialchars($classe['NbDefeat'])?></td>
+                            <?php endif; ?>
+                        </tr>
+                    <?php endforeach ?>
+                <?php endif; ?>
+                <?php if ($_GET['type'] == 'match'): ?>
+                    <?php foreach($match as $key => $classe) : ?>
+                        <tr>
+                            <?php if ($_GET['id'] == 1 && $key < 10): ?>
+                                <td><?= $key+1 ?></td>
+                                <td><?= htmlspecialchars($classe['Pseudo'])?></td>
+                                <td><?= htmlspecialchars($classe['NbMatch'])?></td>
+                                <td><?= htmlspecialchars($classe['NbVictory'])?></td>
+                                <td><?= htmlspecialchars($classe['NbDefeat'])?></td>
+                            <?php endif; ?>
+                            <?php $value+10; ?>
+                            <?php if ($_GET['id'] >= 2 && $key >= $value && $key < $value+10): ?>
+                                <td><?=($key+1)+10*($_GET['id']-1)-10;?></td>
+                                <td><?= htmlspecialchars($classe['Pseudo'])?></td>
+                                <td><?= htmlspecialchars($classe['NbMatch'])?></td>
+                                <td><?= htmlspecialchars($classe['NbVictory'])?></td>
+                                <td><?= htmlspecialchars($classe['NbDefeat'])?></td>
+                            <?php endif; ?>
+                        </tr>
+                    <?php endforeach ?>
+                <?php endif; ?>
+            </tbody>
         </table>
+        <ul>
+            <div class="paging">
+            <?php if($_GET['type'] == 'victory'): ?>
+                <li><a href="classement.php?type=victory&id=1">&laquo;&laquo;</a></li>
+                <?php if($_GET['id'] >= 2): ?>
+                    <li><a href="classement.php?type=victory&id=<?=  $_GET['id'] -1 ?>">&laquo;</a></li>
+                    <li><a href="classement.php?type=victory&id=<?=  $_GET['id'] -1 ?>"><?=  $_GET['id'] -1 ?></a></li>
+                <?php endif; ?>
+                <li><a href="classement.php?type=victory&id=<?=  $_GET['id']?>"><?=  $_GET['id']  ?></a></li>
+                <?php if ($_GET['id'] < $length): ?>
+                    <li><a href="classement.php?type=victory&id=<?=  $_GET['id'] +1 ?>"><?=  $_GET['id'] +1  ?></a></li>
+                    <li><a href="classement.php?type=victory&id=<?=  $_GET['id'] +1 ?>">&raquo;</a></li>
+                <?php endif; ?>
+                <li><a href="classement.php?type=victory&id=<?= ceil($length); ?>">&raquo;&raquo;</a></li>
+            <?php endif; ?>
+            </div>
+            <?php if($_GET['type'] == 'defeat'): ?>
+                <div class="paging">
+                    <li><a href="classement.php?type=defeat&id=1">&laquo;&laquo;</a></li>
+                    <?php if($_GET['id'] >= 2): ?>
+                        <li><a href="classement.php?type=defeat&id=<?=  $_GET['id'] -1 ?>">&laquo;</a></li>
+                        <li><a href="classement.php?type=defeat&id=<?=  $_GET['id'] -1 ?>"><?=  $_GET['id'] -1 ?></a></li>
+                    <?php endif; ?>
+                    <li><a href="classement.php?type=defeat&id=<?=  $_GET['id']?>"><?=  $_GET['id']  ?></a></li>
+                    <?php if ($_GET['id'] < $length): ?>
+                        <li><a href="classement.php?type=defeat&id=<?=  $_GET['id'] +1 ?>"><?=  $_GET['id'] +1  ?></a></li>
+                        <li><a href="classement.php?type=defeat&id=<?=  $_GET['id'] +1 ?>">&raquo;</a></li>
+                    <?php endif; ?>
+                    <li><a href="classement.php?type=defeat&id=<?= ceil($length); ?>">&raquo;&raquo;</a></li>
+                </div>
+            <?php endif; ?>
+            <?php if($_GET['type'] == 'match'): ?>
+                <div class="paging">
+                    <li><a href="classement.php?type=match&id=1">&laquo;&laquo;</a></li>
+                    <?php if($_GET['id'] >= 2): ?>
+                        <li><a href="classement.php?type=match&id=<?=  $_GET['id'] -1 ?>">&laquo;</a></li>
+                        <li><a href="classement.php?type=match&id=<?=  $_GET['id'] -1 ?>"><?=  $_GET['id'] -1 ?></a></li>
+                    <?php endif; ?>
+                    <li><a href="classement.php?type=match&id=<?=  $_GET['id']?>"><?=  $_GET['id']  ?></a></li>
+                    <?php if ($_GET['id'] < $length): ?>
+                        <li><a href="classement.php?type=match&id=<?=  $_GET['id'] +1 ?>"><?=  $_GET['id'] +1  ?></a></li>
+                        <li><a href="classement.php?type=match&id=<?=  $_GET['id'] +1 ?>">&raquo;</a></li>
+                    <?php endif; ?>
+                    <li><a href="classement.php?type=match&id=<?= ceil($length); ?>">&raquo;&raquo;</a></li>
+                </div>
+            <?php endif; ?>
+        </ul>
     </div>
 </main>
